@@ -13,7 +13,7 @@
 
 ## 截图
 
-> 运行后将出现在 macOS 菜单栏，点击图标弹出面板。
+![DeepSeek Monitor UI](DeepSeekMonitor_UI.png)
 
 ## 使用
 

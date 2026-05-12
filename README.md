@@ -13,7 +13,7 @@ A macOS menu bar app that displays real-time DeepSeek API platform metrics inclu
 
 ## Screenshot
 
-> Runs in the macOS menu bar; click the icon to open the popover.
+![DeepSeek Monitor UI](DeepSeekMonitor_UI.png)
 
 ## Getting Started
 
