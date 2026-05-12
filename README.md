@@ -1,49 +1,51 @@
 # DeepSeek Monitor
 
-一个 macOS 菜单栏应用，实时显示 DeepSeek API 平台的余额、月度消费、各模型 Token 用量和消耗趋势。
+[简体中文](README.zh-CN.md)
 
-## 功能
+A macOS menu bar app that displays real-time DeepSeek API platform metrics including balance, monthly cost, per-model token usage, and consumption trends.
 
-- 当前余额 & 本月消费
-- 各模型费用拆解 + Token 消耗进度条（满值 1 亿 Token）
-- 近 7 天 Token 消耗趋势柱状图
-- 每小时自动刷新，也可手动刷新
+## Features
 
-## 截图
+- Current balance & monthly cost
+- Per-model cost breakdown + token usage progress bar (cap: 100M tokens)
+- 7-day token consumption trend bar chart
+- Auto-refresh every hour, with manual refresh support
 
-> 运行后将出现在 macOS 菜单栏，点击图标弹出面板。
+## Screenshot
 
-## 使用
+> Runs in the macOS menu bar; click the icon to open the popover.
 
-### 1. 获取鉴权信息
+## Getting Started
 
-打开 [DeepSeek Platform](https://platform.deepseek.com) 并登录，然后：
+### 1. Get credentials
 
-- **Cookie**：开发者工具 → Application → Cookies → 复制当前站点完整 Cookie
-- **Token**：开发者工具 → Network → 任选一个 API 请求 → 复制 Authorization 头（Bearer xxx）
+Log in to [DeepSeek Platform](https://platform.deepseek.com), then:
 
-### 2. 填入凭证
+- **Cookie**: DevTools → Application → Cookies → copy all cookies for the site
+- **Token**: DevTools → Network → pick any API request → copy the `Authorization` header (`Bearer xxx`)
 
-编辑 `main.swift` 第 108-109 行：
+### 2. Set credentials
+
+Edit `main.swift` lines 108-109:
 
 ```swift
 private let cookie = "YOUR_COOKIE_HERE"
 private let auth = "Bearer YOUR_TOKEN_HERE"
 ```
 
-### 3. 构建运行
+### 3. Build & Run
 
 ```bash
 ./build.sh && open DeepSeekMonitor.app
 ```
 
-## 技术
+## Tech
 
-- SwiftUI + Swift Charts 构建 UI
-- `NSStatusBar` + `NSPopover` 实现菜单栏弹窗
-- `LSUIElement = true` 隐藏 Dock 图标，纯菜单栏应用
-- `DispatchGroup` 并发请求，`Timer` 定时刷新
+- SwiftUI + Swift Charts for UI
+- `NSStatusBar` + `NSPopover` for menu bar integration
+- `LSUIElement = true` to hide the Dock icon (menu bar only)
+- `DispatchGroup` for concurrent API requests, `Timer` for periodic refresh
 
-## 许可
+## License
 
 MIT
