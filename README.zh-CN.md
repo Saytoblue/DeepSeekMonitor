@@ -13,7 +13,7 @@
 
 ## 截图
 
-![DeepSeek Monitor UI](DeepSeekMonitor_UI.png)
+<img src="DeepSeekMonitor_UI.png" width="300" alt="DeepSeek Monitor UI">
 
 ## 使用
 
